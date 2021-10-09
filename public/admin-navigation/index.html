@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>CSS3 Responsive Mega Menu</title>
+    <!-- menu stylesheet file -->
+    <link href="css/mega_menu.min.css" rel="stylesheet">
+    <!-- demo css -->
+    <link rel="stylesheet" href="css/demo.css">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/mega_menu.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- This style code block for demo purpose -> remove this  -->
+    <style type="text/css">
+        .bg-demo {
+            margin: 20px;
+            padding: 0;
+            background: #c3c3c3;
+            background: url("images/bg.png");
+        }
+    </style>
+
+    <!-- demo script -->
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+
+            // variables
+            var Options, get_options;
+
+            // object
+            Options = (function () {
+
+                // constructor
+                function Options(a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z) {
+                    this.logo_align = a;
+                    this.links_align = b;
+                    this.socialBar_align = c;
+                    this.searchBar_align = d;
+                    this.trigger = e;
+                    this.effect = f;
+                    this.effect_speed = g;
+                    this.sibling = h;
+                    this.outside_click_close = i;
+                    this.top_fixed = j;
+                    this.sticky_header = k;
+                    this.sticky_header_height = l;
+                    this.menu_position = m;
+                    this.full_width = n;
+                    this.color_change = o;
+                    this.color_button = p;
+                }
+
+                // object classes
+                Options.prototype.optionsChange = function () {
+                    // menu initialize
+                    $('#menu-1').megaMenu({
+                        // DESKTOP MODE SETTINGS
+                        logo_align          : this.logo_align,
+                        links_align         : this.links_align,
+                        socialBar_align     : this.socialBar_align,
+                        searchBar_align     : this.searchBar_align,
+                        trigger             : this.trigger,
+                        effect              : this.effect,
+                        effect_speed        : 400,
+                        sibling             : true,
+                        outside_click_close : true,
+                        top_fixed           : this.top_fixed,
+                        sticky_header       : this.sticky_header,
+                        sticky_header_height: 200,
+                        menu_position       : this.menu_position,
+                        full_width          : false,
+                        // MOBILE MODE SETTINGS
+                        mobile_settings     : {
+                            collapse            : true,
+                            sibling             : true,
+                            scrollBar           : true,
+                            scrollBar_height    : 400,
+                            top_fixed           : false,
+                            sticky_header       : false,
+                            sticky_header_height: 200
+                        }
+                    });
+                };
+
+                // color change function
+                Options.prototype.colorChange = function (selector, color) {
+                    $(selector).click(function () {
+                        $('#menu-1').attr('data-color', color);
+                    })
+                };
+
+                // return options
+                return Options;
+            })();
+
+            // call object
+            get_options = new Options();
+            // call options change
+            get_options.optionsChange();
+            // call color change function
+            get_options.colorChange();
+            // data colors
+            get_options.colorChange('#color-1', 'blue-grey');
+            get_options.colorChange('#color-2', 'blue-grey-invert');
+            get_options.colorChange('#color-3', 'brown');
+            get_options.colorChange('#color-4', 'brown-invert');
+            get_options.colorChange('#color-5', 'cyan');
+            get_options.colorChange('#color-6', 'cyan-invert');
+            get_options.colorChange('#color-7', 'deep-orange');
+            get_options.colorChange('#color-8', 'deep-orange-invert');
+            get_options.colorChange('#color-9', 'deep-purple');
+            get_options.colorChange('#color-10', 'deep-purple-invert');
+            get_options.colorChange('#color-11', 'grey');
+            get_options.colorChange('#color-12', 'grey-invert');
+            get_options.colorChange('#color-13', 'indigo');
+            get_options.colorChange('#color-14', 'indigo-invert');
+            get_options.colorChange('#color-15', 'light-blue');
+            get_options.colorChange('#color-16', 'light-blue-invert');
+            get_options.colorChange('#color-17', 'light-green');
+            get_options.colorChange('#color-18', 'light-green-invert');
+            get_options.colorChange('#color-19', 'lime');
+            get_options.colorChange('#color-20', 'lime-invert');
+            get_options.colorChange('#color-21', 'orange');
+            get_options.colorChange('#color-22', 'orange-invert');
+            get_options.colorChange('#color-23', 'pink');
+            get_options.colorChange('#color-24', 'pink-invert');
+            get_options.colorChange('#color-25', 'purple');
+            get_options.colorChange('#color-26', 'purple-invert');
+            get_options.colorChange('#color-27', 'red');
+            get_options.colorChange('#color-28', 'red-invert');
+            get_options.colorChange('#color-29', 'teal');
+            get_options.colorChange('#color-30', 'teal-invert');
+
+            // logo align left or right
+            var bt1 = true;
+            $('#btn1').prop('checked', false).click(function () {
+                if (bt1 === true) {
+                    get_options.logo_align = 'right';
+                    get_options.optionsChange();
+                    bt1 = false;
+                } else {
+                    get_options.logo_align = 'left';
+                    get_options.optionsChange();
+                    bt1 = true;
+                }
+            });
+
+            // links align left or right
+            var bt2 = true;
+            $('#btn2').prop('checked', false).click(function () {
+                if (bt2 === true) {
+                    get_options.links_align = 'right';
+                    get_options.optionsChange();
+                    $('#align-1').addClass('margin-fix');
+                    $('#align-2').addClass('margin-fix-1');
+                    bt2 = false;
+                } else {
+                    get_options.links_align = 'left';
+                    get_options.optionsChange();
+                    $('#align-1').removeClass('margin-fix');
+                    $('#align-2').removeClass('margin-fix-1');
+                    bt2 = true;
+                }
+            });
+
+            // social icons left or right
+            var bt3 = true;
+            $('#btn3').prop('checked', false).click(function () {
+                if (bt3 === true) {
+                    get_options.socialBar_align = 'right';
+                    get_options.optionsChange();
+                    bt3 = false;
+                } else {
+                    get_options.socialBar_align = 'left';
+                    get_options.optionsChange();
+                    bt3 = true;
+                }
+            });
+
+            // search bar left or right
+            var bt4 = true;
+            $('#btn4').prop('checked', false).click(function () {
+                if (bt4 === true) {
+                    get_options.searchBar_align = 'left';
+                    get_options.optionsChange();
+                    bt4 = false;
+                } else {
+                    get_options.searchBar_align = 'right';
+                    get_options.optionsChange();
+                    bt4 = true;
+                }
+            });
+
+            // fixed on top
+            var bt5 = true;
+            $('#btn5').prop('checked', false).click(function () {
+                if (bt5 === true) {
+                    get_options.top_fixed = true;
+                    get_options.optionsChange();
+                    $('#hide-label-1').css('visibility', 'hidden');
+                    bt5 = false;
+                } else {
+                    get_options.top_fixed = false;
+                    get_options.optionsChange();
+                    $('#hide-label-1').css('visibility', 'visible');
+                    bt5 = true;
+                }
+            });
+
+            // sticky header
+            var bt6 = true;
+            $('#btn6').prop('checked', false).click(function () {
+                if (bt6 === true) {
+                    get_options.sticky_header = true;
+                    get_options.optionsChange();
+                    $('body').css('height', '2000px');
+                    $('#hide-label').css('visibility', 'hidden');
+                    bt6 = false;
+                } else {
+                    get_options.sticky_header = false;
+                    get_options.optionsChange();
+                    $('body').css('height', '');
+                    $('#hide-label').css('visibility', 'visible');
+                    bt6 = true;
+                }
+            });
+
+            // position change
+            $('#btn7').val('horizontal').on('change keydown keyup', function () {
+                get_options.menu_position = $(this).val();
+                get_options.optionsChange();
+                var get_value = $(this).val();
+                if (get_value === 'vertical-left' || get_value === 'vertical-right') {
+                    $('.abc').hide(0);
+                } else {
+                    $('.abc').show(0);
+                }
+            });
+
+            // drop down effects
+            $('#btn8').val('fade').on('change keydown keyup', function () {
+                get_options.effect = $(this).val();
+                get_options.optionsChange();
+            });
+
+            // trigger change
+            $('#btn9').val('hover').on('change keydown keyup', function () {
+                get_options.trigger = $(this).val();
+                get_options.optionsChange();
+                console.log($(this).val())
+            });
+
+
+        });
+    </script>
+
+</head>
+<body class="bg-demo">
+
+<!-- menu start -->
+<nav id="menu-1" class="mega-menu" data-color="">
+    <!-- menu list items container -->
+    <section class="menu-list-items">
+        <!-- menu logo -->
+        <ul class="menu-logo">
+            <li>
+                <a href="#"> <!--<i class="fa fa-circle-o-notch"></i>--> Company Logo
+                    <img src="images/ufo.png" alt="logo"> </a>
+            </li>
+        </ul>
+        <!-- menu links -->
+        <ul class="menu-links">
+            <!-- active class -->
+            <li class="active"><a href="#"> <i class="fa fa-home"></i> Active</a></li>
+            <li><a href="javascript:void(0)">Drop Down <i class="fa fa-angle-down fa-indicator"></i></a>
+
+                <!-- drop down multilevel  -->
+                <ul class="drop-down-multilevel">
+                    <li><a href="#">Item one</a></li>
+                    <li><a href="javascript:void(0)">Items Right Side <i class="fa fa-angle-right fa-indicator"></i> </a>
+
+                        <!-- drop down second level -->
+                        <ul class="drop-down-multilevel">
+                            <li><a href="javascript:void(0)"> <i class="fa fa-buysellads"></i> Level 2 <i class="fa fa-angle-right fa-indicator"></i></a>
+
+                                <!-- drop down third level -->
+                                <ul class="drop-down-multilevel">
+                                    <li><a href="#">Level 3</a></li>
+                                    <li><a href="#">Level 3</a></li>
+                                    <li><a href="#">Level 3</a></li>
+                                </ul>
+
+                            </li>
+                            <li><a href="javascript:void(0)"> <i class="fa fa-dashcube"></i> Level 2 <i class="fa fa-angle-right fa-indicator"></i></a>
+
+                                <!-- drop down third level -->
+                                <ul class="drop-down-multilevel">
+                                    <li><a href="#">Level 3</a></li>
+                                    <li><a href="#">Level 3</a></li>
+                                    <li><a href="#">Level 3</a></li>
+                                </ul>
+
+                            </li>
+                            <li><a href="javascript:void(0)"> <i class="fa fa-heartbeat"></i> Level 2 <i class="fa fa-angle-right fa-indicator"></i></a>
+
+                                <!-- drop down third level -->
+                                <ul class="drop-down-multilevel">
+                                    <li><a href="#">Level 3</a></li>
+                                    <li><a href="#">Level 3</a></li>
+                                    <li><a href="#">Level 3</a></li>
+                                </ul>
+
+                            </li>
+                            <li><a href="javascript:void(0)"> <i class="fa fa-medium"></i> Level 2 <i class="fa fa-angle-right fa-indicator"></i></a>
+
+                                <!-- drop down third level -->
+                                <ul class="drop-down-multilevel">
+                                    <li><a href="#">Level 3</a></li>
+                                    <li><a href="#">Level 3</a></li>
+                                    <li><a href="#">Level 3</a></li>
+                                </ul>
+
+                            </li>
+                            <li><a href="javascript:void(0)"> <i class="fa fa-leanpub"></i> Level 2 <i class="fa fa-angle-right fa-indicator"></i></a>
+
+                                <!-- drop down third level -->
+                                <ul class="drop-down-multilevel">
+                                    <li><a href="#">Level 3</a></li>
+                                    <li><a href="#">Level 3</a></li>
+                                    <li><a href="#">Level 3</a></li>
+                                </ul>
+
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li><a href="#">Item 2</a></li>
+                    <li><a href="javascript:void(0)">Items Left Side <i class="fa fa-angle-left fa-indicator"></i> </a>
+
+                        <!-- drop down left side --> <!-- add class left-side -->
+                        <ul class="drop-down-multilevel left-side">
+                            <li><a href="#"> <i class="fa fa-forumbee"></i> Level 2</a></li>
+                            <li><a href="#"> <i class="fa fa-hotel"></i> Level 2</a></li>
+                            <li><a href="#"> <i class="fa fa-automobile"></i> Level 2</a></li>
+                            <li><a href="javascript:void(0)"> <i class="fa fa-heartbeat"></i> Level 2 <i class="fa fa-plus fa-indicator"></i> </a>
+
+                                <!--drop down second level-->
+                                <ul class="drop-down-multilevel">
+                                    <li><a href="#">Level 3</a></li>
+                                    <li><a href="#">Level 3</a></li>
+                                    <li><a href="#">Level 3</a></li>
+                                    <li><a href="#">Level 3</a></li>
+                                </ul>
+
+                            </li>
+                            <li><a href="#"> <i class="fa fa-bookmark"></i> Level 2</a></li>
+                            <li><a href="#"> <i class="fa fa-bell"></i> Level 2</a></li>
+                            <li><a href="#"> <i class="fa fa-soccer-ball-o"></i> Level 2</a></li>
+                            <li><a href="#"> <i class="fa fa-life-ring"></i> Level 2</a></li>
+                        </ul>
+
+                    </li>
+                    <li><a href="#">Item 4</a></li>
+                </ul>
+
+            </li>
+            <li><a href="javascript:void(0)">Mega Menu <i class="fa fa-angle-down fa-indicator"></i></a>
+
+                <!-- drop down full width -->
+                <div class="drop-down grid-col-12">
+                    <!--grid row-->
+                    <div class="grid-row">
+                        <!--grid column 2-->
+                        <div class="grid-col-2">
+                            <h4>List Items</h4>
+                            <ul>
+                                <li><a href="#"> NetTuts </a></li>
+                                <li><a href="#"> VectorTuts </a></li>
+                                <li><a href="#"> PsdTuts </a></li>
+                                <li><a href="#"> PhotoTuts </a></li>
+                                <li><a href="#"> ActiveTuts </a></li>
+                                <li><a href="#"> Creattica </a></li>
+                            </ul>
+                        </div>
+                        <!--grid column 2-->
+                        <div class="grid-col-2">
+                            <h4>List + Description</h4>
+                            <ul>
+                                <li class="list-description"><a href="#"> ThemeForest <span>Description</span> </a></li>
+                                <li class="list-description"><a href="#"> GraphicRiver <span>Description</span> </a></li>
+                                <li class="list-description"><a href="#"> ActiveDen <span>Description</span> </a></li>
+                                <li class="list-description"><a href="#"> VideoHive <span>Description</span> </a></li>
+                            </ul>
+                        </div>
+                        <!--grid column 2-->
+                        <div class="grid-col-2">
+                            <h4>Images + Description</h4>
+                            <ul>
+                                <li class="image-description"><a href="#"> <img src="images/icons/brush_64px.png" alt="list images"> ThemeForest <span>Description</span> </a></li>
+                                <li class="image-description"><a href="#"> <img src="images/icons/palette_2_64px.png" alt="list images"> GraphicRiver <span>Description</span> </a></li>
+                                <li class="image-description"><a href="#"> <img src="images/icons/palette_64px.png" alt="list images"> ActiveDen <span>Description</span> </a></li>
+                            </ul>
+                        </div>
+                        <!--grid column 2-->
+                        <div class="grid-col-2">
+                            <h4>List With Icons</h4>
+                            <ul>
+                                <li><a href="#"> <i class="fa fa-leaf"></i> Design </a></li>
+                                <li><a href="#"> <i class="fa fa-pie-chart"></i> Logo </a></li>
+                                <li><a href="#"> <i class="fa fa-foursquare"></i> Flash </a></li>
+                                <li><a href="#"> <i class="fa fa-flash"></i> Illustration </a></li>
+                            </ul>
+                        </div>
+                        <!--grid column 2-->
+                        <div class="grid-col-2">
+                            <h4>Paragraph</h4>
+
+                            <p class="space-0">
+                                Curabitur ut sodales odio. Cras quis mi ac nisl euismod tempor
+                                sed a arcu. Vestibulum faucibus fermentum purus ac tempor.
+                                Maecenas ut leo quis ipsum vulputate varius. Pellentesque eget.
+                            </p>
+                        </div>
+                        <!--grid column 2-->
+                        <div class="grid-col-2">
+                            <h4>Image</h4>
+                            <a href="#" class="space-0">
+                                <img src="images/img.jpg" alt="Image">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </li>
+            <li><a href="javascript:void(0)">Grid <i class="fa fa-angle-down fa-indicator"></i></a>
+
+                <!-- drop down -->
+                <div class="drop-down grid-col-12 grid-demo offset-3-vertical">
+                    <!--grid row-->
+                    <div class="grid-row">
+                        <div class="grid-col-1"><span>grid-col-1</span></div>
+                        <div class="grid-col-11"><span>grid-col-11</span></div>
+                    </div>
+                    <!--grid row-->
+                    <div class="grid-row">
+                        <div class="grid-col-10"><span>grid-col-10</span></div>
+                        <div class="grid-col-2"><span>grid-col-2</span></div>
+                    </div>
+                    <!--grid row-->
+                    <div class="grid-row">
+                        <div class="grid-col-3"><span>grid-col-3</span></div>
+                        <div class="grid-col-9"><span>grid-col-9</span></div>
+                    </div>
+                    <!--grid row-->
+                    <div class="grid-row">
+                        <div class="grid-col-8"><span>grid-col-8</span></div>
+                        <div class="grid-col-4"><span>grid-col-4</span></div>
+                    </div>
+                    <!--grid row-->
+                    <div class="grid-row">
+                        <div class="grid-col-5"><span>grid-col-5</span></div>
+                        <div class="grid-col-7"><span>grid-col-7</span></div>
+                    </div>
+                    <!--grid row-->
+                    <div class="grid-row">
+                        <div class="grid-col-1"><span>grid-col-1</span></div>
+                        <div class="grid-col-1"><span>grid-col-1</span></div>
+                        <div class="grid-col-1"><span>grid-col-1</span></div>
+                        <div class="grid-col-1"><span>grid-col-1</span></div>
+                        <div class="grid-col-1"><span>grid-col-1</span></div>
+                        <div class="grid-col-1"><span>grid-col-1</span></div>
+                        <div class="grid-col-1"><span>grid-col-1</span></div>
+                        <div class="grid-col-1"><span>grid-col-1</span></div>
+                        <div class="grid-col-1"><span>grid-col-1</span></div>
+                        <div class="grid-col-1"><span>grid-col-1</span></div>
+                        <div class="grid-col-1"><span>grid-col-1</span></div>
+                        <div class="grid-col-1"><span>grid-col-1</span></div>
+                    </div>
+                    <!--grid row-->
+                    <div class="grid-row">
+                        <div class="grid-col-2"><span>grid-col-2</span></div>
+                        <div class="grid-col-2"><span>grid-col-2</span></div>
+                        <div class="grid-col-2"><span>grid-col-2</span></div>
+                        <div class="grid-col-2"><span>grid-col-2</span></div>
+                        <div class="grid-col-2"><span>grid-col-2</span></div>
+                        <div class="grid-col-2"><span>grid-col-2</span></div>
+                    </div>
+                    <!--grid row-->
+                    <div class="grid-row">
+                        <div class="grid-col-4"><span>grid-col-4</span></div>
+                        <div class="grid-col-4"><span>grid-col-4</span></div>
+                        <div class="grid-col-4"><span>grid-col-4</span></div>
+                    </div>
+                    <!--grid row-->
+                    <div class="grid-row">
+                        <div class="grid-col-2"><span>grid-col-2</span></div>
+                        <div class="grid-col-7"><span>grid-col-7</span></div>
+                        <div class="grid-col-3"><span>grid-col-3</span></div>
+                    </div>
+                    <!--grid row-->
+                    <div class="grid-row">
+                        <div class="grid-col-4"><span>grid-col-4</span></div>
+                        <div class="grid-col-1"><span>grid-col-1</span></div>
+                        <div class="grid-col-5"><span>grid-col-5</span></div>
+                        <div class="grid-col-2"><span>grid-col-2</span></div>
+                    </div>
+                    <!--grid row-->
+                    <div class="grid-row">
+                        <div class="grid-col-12"><span>grid-col-12</span></div>
+                    </div>
+
+                </div>
+
+            </li>
+            <li><a href="javascript:void(0)">Tab Bar <i class="fa fa-angle-down fa-indicator"></i></a>
+
+                <!-- drop down full width -->
+                <ul class="drop-down-tab-bar grid-col-12">
+                    <li><a href="#"> <i class="fa fa-tags"></i> Tab Bar <i class="fa fa-angle-right fa-indicator"></i> </a></li>
+                    <li><a href="#">Motion Graphics<i class="fa fa-angle-right fa-indicator"></i> </a></li>
+                    <li><a href="#">Game Development<i class="fa fa-angle-right fa-indicator"></i> </a></li>
+                    <li><a href="#">Business<i class="fa fa-angle-right fa-indicator"></i> </a></li>
+                    <li><a href="#">Illustration<i class="fa fa-angle-right fa-indicator"></i> </a></li>
+                    <li><a href="#">Web Design<i class="fa fa-angle-right fa-indicator"></i> </a></li>
+                    <li><a href="#">Mac Computer Skills<i class="fa fa-angle-right fa-indicator"></i> </a></li>
+                </ul>
+
+            </li>
+            <li><a href="javascript:void(0)">Images <i class="fa fa-angle-down fa-indicator"></i></a>
+
+                <!-- drop down with grid column 5 + offset-1 -->
+                <div id="align-1" class="drop-down grid-col-6 offset-3 offset-4-vertical">
+                    <!--grid row-->
+                    <div class="grid-row">
+                        <div class="grid-col-3">
+                            <h4>Product #1</h4>
+                            <a href="#" class="space-0">
+                                <img src="images/img.jpg" alt="Image">
+                            </a>
+                        </div>
+                        <div class="grid-col-3">
+                            <h4>Product #2</h4>
+                            <a href="#" class="space-0">
+                                <img src="images/img.jpg" alt="Image">
+                            </a>
+                        </div>
+                        <div class="grid-col-3">
+                            <h4>Product #3</h4>
+                            <a href="#" class="space-0">
+                                <img src="images/img.jpg" alt="Image">
+                            </a>
+                        </div>
+                        <div class="grid-col-3">
+                            <h4>Product #4</h4>
+                            <a href="#" class="space-0">
+                                <img src="images/img.jpg" alt="Image">
+                            </a>
+                        </div>
+
+                        <!--grid row-->
+                        <div class="grid-row">
+                            <div class="grid-col-12">
+                                <!--horizontal line-->
+                                <hr class="space-0">
+                                <br>
+
+                                <h3 class="space-0">Here is some content with side images</h3>
+                            </div>
+                        </div>
+
+                        <!--grid row-->
+                        <div class="grid-row">
+                            <div class="grid-col-9">
+                                <p class="space-0">
+                                    Maecenas eget eros lorem, nec pellentesque lacus quis felis
+                                    consequat scelerisque. Aenean dui orci, rhoncus sit amet
+                                    tristique eu, tristique sed odio. Praesent ut interdum elit.
+                                    Sed in sem mauris. Aenean a commodo mi. Praesent augue lacus.
+                                </p>
+                                <a href="#">Read more...</a>
+                            </div>
+                            <div class="grid-col-3">
+                                <a href="#" class="space-0">
+                                    <img src="images/img.jpg" alt="Image">
+                                </a>
+                            </div>
+                        </div>
+
+                        <!--grid row-->
+                        <div class="grid-row">
+                            <div class="grid-col-3">
+                                <a href="#" class="space-0">
+                                    <img src="images/img.jpg" alt="Image">
+                                </a>
+                            </div>
+                            <div class="grid-col-9">
+                                <p class="space-0">
+                                    Maecenas eget eros lorem, nec pellentesque lacus quis felis
+                                    consequat scelerisque. Aenean dui orci, rhoncus sit amet
+                                    tristique eu, tristique sed odio. Praesent ut interdum elit.
+                                    Sed in sem mauris. Aenean a commodo mi. Praesent augue lacus.
+                                </p>
+                                <a href="#">Read more...</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </li>
+            <li><a href="javascript:void(0)">Contact <i class="fa fa-angle-down fa-indicator"></i></a>
+
+                <!-- drop down with grid column 5 + offset-1 -->
+                <div id="align-2" class="drop-down grid-col-6 offset-5 offset-5-vertical">
+                    <!--grid row-->
+                    <div class="grid-row">
+                        <div class="grid-col-6">
+                            <h3>Contact Us</h3>
+
+                            <p>Please fill in the following form to contact us</p>
+                            <!--menu contact form-->
+                            <form method="post" action="mail/nav-form.php" class="menu-contact-form">
+                                <input name="nav_form_subject" required="required" placeholder="Name" type="text">
+                                <input name="nav_form_mail" required="required" placeholder="E-mail Address" type="email">
+                                <textarea rows="4" name="nav_form_message" required="required" placeholder="Message"></textarea>
+                                <!--submit or reset buttons-->
+                                <button type="submit">Submit <i class="fa fa-circle-o-notch fa-spin"></i></button>
+                                <button type="reset">Reset</button>
+                                <!--form send or error message notification-->
+                                <div class="nav_form_notification"></div>
+                            </form>
+
+                        </div>
+                        <div class="grid-col-6">
+                            <h3>Video</h3>
+
+                            <p>Maecenas eget eros lorem, nec pellentesque lacus quis felis consequat scelerisque. Aenean dui orci, rhoncus sit amet tristique eu, tristique sed odio. Praesent ut interdum elit. Sed in sem mauris. Aenean a commodo mi. Praesent augue lacus. </p>
+                            <!-- youtube video -->
+                            <!-- 4:3 aspect ratio -->
+                            <div class="embed-responsive embed-responsive-4by3">
+                                <iframe height="200" class="embed-responsive-item" src="http://www.youtube.com/embed/SZEflIVnhH8" allowfullscreen=""></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </li>
+        </ul>
+        <!-- menu social bar -->
+        <ul class="menu-social-bar">
+            <li data-color="blue"><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+            <li data-color="sky-blue"><a href="#"><i class="fa fa-twitter-square"></i></a></li>
+            <li data-color="orange"><a href="#"><i class="fa fa-google-plus-square"></i></a></li>
+            <li data-color="red"><a href="#"><i class="fa fa-pinterest-square"></i></a></li>
+        </ul>
+        <!-- menu search bar -->
+        <ul class="menu-search-bar">
+            <li>
+                <form method="post" action="#">
+                    <label>
+                        <input name="menu_search_bar" placeholder="Search" type="search">
+                        <i class="fa fa-search"></i>
+                    </label>
+                </form>
+            </li>
+        </ul>
+    </section>
+</nav>
+<!-- menu end -->
+
+<div class="settings">
+    <table>
+        <tr>
+            <th colspan="50">Settings</th>
+        </tr>
+        <tr>
+            <th colspan="50">
+                <hr>
+            </th>
+        </tr>
+        <tr class="hide-table">
+            <td class="hide-table">
+                <label class="abc" data-tooltip="This option is used to align the logo left or right side of the screen.">Logo Right<input type="checkbox" id="btn1"></label>
+            </td>
+            <td class="hide-table">
+                <label class="abc" data-tooltip="This option is used to align the links left or right side of the screen.">Links Right<input type="checkbox" id="btn2"></label>
+            </td>
+            <td class="hide-table">
+                <label class="abc" data-tooltip="This option is used to align the social icons left or right side.">Social Icons Right<input type="checkbox" id="btn3"></label>
+            </td>
+            <td class="hide-table">
+                <label class="abc" data-tooltip="This option is used to align the search bar left or right side.">Search Bar Left<input type="checkbox" id="btn4"></label>
+            </td>
+            <td class="hide-table">
+                <label data-tooltip="This option is used to fixed the menu top of the screen." id="hide-label">Fixed On Top<input type="checkbox" id="btn5"></label>
+            </td>
+            <td class="hide-table">
+                <label class="abc" data-tooltip="This option is used to make the menu sticky when user scroll the screen top to bottom." id="hide-label-1">Sticky Header<input type="checkbox" id="btn6"></label>
+            </td>
+        </tr>
+        <tr class="hide-table">
+            <td colspan="2">
+                <label data-tooltip="This option is used to change the menu position.">
+                    Menu Position Change
+                    <select id="btn7">
+                        <option value="horizontal">Horizontal</option>
+                        <option value="vertical-left">Vertical Left</option>
+                        <option value="vertical-right">Vertical Right</option>
+                    </select>
+                </label>
+            </td>
+            <td colspan="2">
+                <label data-tooltip="This option is used to change the drop down animation.">
+                    Drop Down Effects
+                    <select id="btn8">
+                        <option value="fade">Fade</option>
+                        <option value="scale">Scale</option>
+                        <option value="expand-top">Expand Top</option>
+                        <option value="expand-bottom">Expand Bottom</option>
+                        <option value="expand-left">Expand Left</option>
+                        <option value="expand-right">Expand Right</option>
+                    </select>
+                </label>
+            </td>
+            <td colspan="2">
+                <label data-tooltip="This option is used to change the drop down trigger. It means drop down show on mouse click or mouse hover.">
+                    Trigger
+                    <select id="btn9">
+                        <option value="hover">Hover</option>
+                        <option value="click">Click</option>
+                    </select>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <th colspan="50">Colors</th>
+        </tr>
+        <tr>
+            <th colspan="50">
+                <hr>
+            </th>
+        </tr>
+        <tr>
+            <td colspan="50">
+                <div id="color-1" class="color-change"></div>
+                <div id="color-2" class="color-change"></div>
+                <div id="color-3" class="color-change"></div>
+                <div id="color-4" class="color-change"></div>
+                <div id="color-5" class="color-change"></div>
+                <div id="color-6" class="color-change"></div>
+                <div id="color-7" class="color-change"></div>
+                <div id="color-8" class="color-change"></div>
+                <div id="color-9" class="color-change"></div>
+                <div id="color-10" class="color-change"></div>
+                <div id="color-11" class="color-change"></div>
+                <div id="color-12" class="color-change"></div>
+                <div id="color-13" class="color-change"></div>
+                <div id="color-14" class="color-change"></div>
+                <div id="color-15" class="color-change"></div>
+                <div id="color-16" class="color-change"></div>
+                <div id="color-17" class="color-change"></div>
+                <div id="color-18" class="color-change"></div>
+                <div id="color-19" class="color-change"></div>
+                <div id="color-20" class="color-change"></div>
+                <div id="color-21" class="color-change"></div>
+                <div id="color-22" class="color-change"></div>
+                <div id="color-23" class="color-change"></div>
+                <div id="color-24" class="color-change"></div>
+                <div id="color-25" class="color-change"></div>
+                <div id="color-26" class="color-change"></div>
+                <div id="color-27" class="color-change"></div>
+                <div id="color-28" class="color-change"></div>
+                <div id="color-29" class="color-change"></div>
+                <div id="color-30" class="color-change"></div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="50">
+                <label class="hide-table">This Menu Have More Options But Not Showing In Demo.</label>
+            </td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
+<!-- Localized -->

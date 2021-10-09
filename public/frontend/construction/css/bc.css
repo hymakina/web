@@ -1,0 +1,27 @@
+.bc #breadcrumb{
+  position: relative;
+  background: #000;
+  padding: 20px;
+}
+.overly {
+  background: rgba(0, 0, 0, 0.85);
+}
+.bc #breadcrumb h2,
+.bc #breadcrumb a,
+.bc #breadcrumb span{
+  color: #fff;
+}
+.bc #breadcrumb h2{
+  margin-bottom: 20px;
+}
+.bc #breadcrumb a{
+  font-size: 18px;
+  font-weight: 400;
+}
+.bc #breadcrumb .active{
+ color: #1248b9;
+}
+.bc #breadcrumb span {
+  display: inline-block;
+  padding: 0px 5px;
+}

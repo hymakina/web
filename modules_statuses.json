@@ -1,0 +1,11 @@
+{
+    "Admin": true,
+    "Contact": true,
+    "Dashboard": true,
+    "Menu": true,
+    "Page": true,
+    "Product": true,
+    "Setting": true,
+    "Slider": true,
+    "Translation": true
+}

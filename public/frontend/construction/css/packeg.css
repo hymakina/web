@@ -1,0 +1,469 @@
+.packeg #popular_turs{
+  background: none;
+  background-color: #fff;
+}
+.packeg #popular_turs .c-box {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+.packeg #popular_turs .c-box:hover {
+  box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+}
+.packeg #popular_turs .b-c {
+  margin: 10px 0px 7px;
+}
+
+/* hotel css */
+.hotel #popular_turs .c-box .img{
+  position: relative;
+}
+.hotel #popular_turs .c-box .img .sd-box{
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  background: #356ad8;
+  padding: 10px 20px;
+  color: #fff;
+  font-weight: 400;
+}
+.hotel #popular_turs .c-box article .footer .left span{
+  font-size: 15px;
+  font-weight: 400;
+  color: #242424;
+}
+.hotel #popular_turs .c-box article .footer .right{
+font-size: 30px;
+font-weight: 600;
+color: #356ad8;
+}
+.hotel #popular_turs .c-box article .footer .left .stars li{
+  display: inline-block;
+}
+.hotel #popular_turs .c-box article .footer .left .stars li i{
+color: #fecf14;
+font-size: 16px;
+}
+
+#hotelDetails  .box{
+  padding: 30px 15px;
+  
+}
+#hotelDetails  p{
+  font-size: 18px;
+  font-weight: 500;
+}
+#hotelDetails  .box i{
+ font-size: 40px;
+ color: #b3b3b3;
+ margin-right: 15px;
+}
+#hotelDetails .box-1{
+  background: #356ad8;
+  text-align: center;
+  color: #fff;
+  border-radius: .25rem;
+
+}
+#hotelDetails .box-1 .h2{
+  font-size: 36px;
+  font-weight: 400;
+}
+#hotelDetails  .box-1 h2{
+  color: #fff;
+}
+#hotelDetails .box-1 p{
+ font-size: 18px;
+}
+#hotelDetails {
+  padding: 100px 0px 100px;
+}
+#hotelDetails .book-now{
+   background: #356ad8;
+   color: #FFF;
+   padding: 12px 25px;
+   border-radius: .25rem;
+   display: inline-block;
+   margin-top: 50px;
+   border: 2px solid #356ad8;
+   -webkit-transition: all .3s;
+   -moz-transition: all .3s;
+   -ms-transition: all .3s;
+   -o-transition: all .3s;
+   transition: all .3s;
+}
+#hotelDetails .book-now:hover{
+   background: none;
+   border-color: #356ad8;
+   color: #356ad8;
+}
+
+/* ========= package details ========== */
+
+#packdetails .tour-detail-wrapper{
+    padding: 15px;
+}
+
+#packdetails .catagori ul{
+    overflow: hidden;
+    font-family: "Montserrat", sans-serif;
+    border: none;
+    border-radius: 3px;
+    margin-left: -15px;
+    margin-right: -15px;
+    border-left: 3px solid #fff;
+    border-right: 3px solid #fff;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#packdetails .catagori ul li{
+  display: inline-block;
+  text-align: center;
+}
+
+#packdetails .catagori ul li a p{
+    color: #3e3e3e;
+    font-weight: 600 !important;
+    font-size: 14px;
+}
+
+#packdetails .catagori ul li a.active{
+    box-shadow: none;
+    background: #fff;
+    color: #3e3e3e;
+    border-color: #dee2e6;
+    border-radius: 3px;
+}
+
+#packdetails .catagori ul li a.active p{
+    color: #a33048;
+}
+
+#packdetails .tab-content .tab-pane {
+    padding: 20px;
+}
+
+#packdetails .tour-detail-wrapper{
+    background: #fff;
+    border-radius: 3px;
+    margin-bottom: 50px;
+    border-top: 3px solid #ffffff;
+    padding-top: 0;
+}
+
+#packdetails .nav-tabs {
+    padding: 10px 10px 10px 10px;
+}
+
+#packdetails .post ul li{
+font-size: 12px;
+display: inline-block;
+}
+
+#packdetails .post article p{
+    font-family: "Lato", sans-serif;
+    color: #797979;
+    line-height: 27px;
+}
+
+#packdetails .post{
+    margin-top: 10px;
+}
+
+
+
+#packdetails .post .date li{
+ margin-right: 10px;
+}
+#packdetails .post .date{
+  margin-bottom: 5px;
+}
+#packdetails .post .date i{
+ color: #bcbcbc;
+ margin-right: 7px;
+}
+#packdetails .post h3 span{
+  color: #356ad8;
+  padding-left: 50px;
+}
+#packdetails .list ul li {
+    display: flex;
+    padding: 20px 25px 20px 0;
+    vertical-align: top;
+    color: #3e3e3e;
+    border-top: 1px solid #f3f3f3;
+}
+
+#packdetails .list ul li:last-child {
+    border-bottom: 1px solid #f3f3f3;
+}
+
+#packdetails .list ul li .left-l{
+ display: inline-block;
+  text-align: left;
+    width: 25%;
+}
+#packdetails .list ul li .right-r{
+  display: inline-block;
+ }
+
+#packdetails .list ul li .left-l P{
+float: left;
+}
+#packdetails .list ul li .right-r P{
+ float: right;
+}
+
+#packdetails .list ul li h5{
+    color: #333;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+#packdetails .list ul li p{
+    color: #3e3e3e;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+
+}
+
+#packdetails .list{
+    padding-top: 40px;
+}
+#packdetails .list .l-c1{
+  background: #f6f6f6;
+}
+#packdetails .list .l-c2{
+  background: #fafafa;
+}
+
+
+
+
+#packdetails .price-date-info{
+    padding-top: 5px;
+}
+
+#packdetails .price-date-info ul{
+    border: 1px solid #f3f3f3;
+}
+
+#packdetails .price-date-info ul li {
+    display: flex;
+    padding: 0;
+    vertical-align: top;
+    color: #3e3e3e;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+#packdetails .price-date-info ul li:last-child {
+    border-bottom: none;
+}
+
+#packdetails .price-date-info ul li .info-column{
+    display: inline-block;
+    text-align: center;
+    width: 18%;
+    border-left: 1px solid #f3f3f3;
+    padding: 10px 0 10px 0;
+}
+
+#packdetails .price-date-info ul li .info-column:first-child label{
+    color: #333;
+    font-family: "Montserrat", sans-serif;
+    line-height: 14px;
+    margin-bottom: 7px;
+    display: block;
+    font-size: 13px;
+    color: #494949;
+}
+
+#packdetails .price-date-info ul li .info-column:first-child label:first-of-type{
+    margin-top: 10px;
+    margin-top: 10px;
+}
+
+#packdetails .price-date-info ul li .info-column:first-child label:last-child{
+    margin-bottom: 0;
+}
+
+#packdetails .price-date-info ul li .info-column:first-child{
+    width: 28%;
+    border-left: none;
+}
+
+#packdetails .price-date-info ul li h5{
+    color: #333;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+#packdetails .price-date-info ul li p{
+    color: #3e3e3e;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#packdetails .price-date-info ul li p strong{
+    font-size: 13px;
+}
+
+
+
+
+#packdetails .services-info{
+    padding-top: 5px;
+}
+
+#packdetails .services-info ul{
+}
+
+#packdetails .services-info ul li {
+    display: flex;
+    padding: 0;
+    vertical-align: top;
+    color: #3e3e3e;
+    border-top: 1px solid #f3f3f3;
+}
+
+#packdetails .services-info ul li:last-child {
+    border-bottom: 1px solid #f3f3f3;
+}
+
+#packdetails .services-info ul li .info-column{
+    display: inline-block;
+    text-align: center;
+    padding: 10px 0 10px 0;
+}
+
+#packdetails .services-info ul li p{
+    color: #3e3e3e;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#packdetails .services-info ul li p:before {
+    content: '.';
+    padding: 5px;
+    color: #3e3e3e;
+    font-size: 22px;
+    margin-left: 5px;
+    bottom: 3px;
+    position: relative;
+    margin-right: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#packdetails .whay-choose-pac{
+  margin-top: 50px;
+}
+#packdetails .whay-choose-pac h3{
+ margin-bottom: 15px;
+}
+#packdetails .whay-choose-pac{
+  margin-top: 50px;
+}
+#packdetails .whay-choose-pac ul li i{
+color: #356ad8;
+margin-right: 5px;
+font-size: 16px;
+font-weight: 600;
+line-height: 30px;
+}
+#latest_news {
+  padding: 22px 0px 0px;
+  background: #fff;
+}
+#latest_news .c-box{
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.219);
+}
+
+
+.my-contact-box{
+  background: url(../img/other/myContactBox.jpg) no-repeat center;
+  background-size: cover;
+  margin-top: 50px;
+  padding: 50px 20px;
+  color: #fff;
+  position: relative;
+}
+.over-lay-box{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: -0;
+}
+.my-contact-box article{
+  position: inherit;
+  z-index: 99;;
+}
+.my-contact-box h3{
+  color: #fff;
+  margin-bottom: 10px;
+}
+.my-contact-box p{
+  margin: 0px 0px 30px;
+}
+.my-contact-box ul li{
+  line-height: 30px;
+}
+.my-contact-box ul li i{
+  margin-right: 7px;
+}
+.my-contact-box a{
+  color: #fff;
+}
+#popular_turs {
+    padding: 100px 0px 70px;
+}
+
+.hotel #popular_turs .c-box .img {
+
+    position: relative;
+
+}
+.hotel #popular_turs .c-box .img img {
+    width: 100%;
+}
+.packeg #popular_turs .c-box img{
+    width: 100%;
+}
+#packdetails .nav-tabs .nav-link:hover{
+   border-color: #ffffff00 #e9ecef00 #dee2e600; 
+}
+
+
+.reservation-sidebar .blog-box{
+    margin-top: 30px;
+}

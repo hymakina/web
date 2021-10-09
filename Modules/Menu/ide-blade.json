@@ -1,0 +1,9 @@
+{
+    "namespaces": [
+        {
+            "namespace": "menu",
+            "path": "Resources/views"
+        }
+
+    ]
+}
